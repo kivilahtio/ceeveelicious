@@ -33,6 +33,7 @@ sub setPlugins {
   my $app = $self->app;
   my $swaggerMainFile = $app->home->rel_file("/public/swagger/swagger.json");
 
+  $ENV{SWAGGER2_DEBUG} = 1 unless ($ENV{MOJO_MODE} && $ENV{MOJO_MODE} eq 'production');
   $self->plugin('PODRenderer');
   $self->plugin('AssetPack');
   $self->plugin(Swagger2 => {url => $swaggerMainFile});
@@ -46,8 +47,7 @@ sub defineRoutes {
   my $r = $self->routes;
 
   # Normal route to controller
-  $r->get('/')->to(controller => 'main', action => 'webapp');
-  $r->get('/example')->to(controller => 'example', action => 'welcome');
+  $r->get('/')->to('main#webapp');
 }
 
 sub minifySwagger {

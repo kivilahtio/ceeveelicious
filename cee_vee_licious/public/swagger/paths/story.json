@@ -1,7 +1,7 @@
 {
   "/story": {
     "get": {
-      "operationId": "getStories",
+      "operationId": "listStorys",
       "tags": ["story"],
       "summary": "Gets all the nice stories",
       "description": "Returns all stories from the database",
