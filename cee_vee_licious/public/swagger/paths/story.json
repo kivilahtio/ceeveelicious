@@ -1,0 +1,62 @@
+{
+  "/story": {
+    "get": {
+      "operationId": "getStories",
+      "tags": ["story"],
+      "summary": "Gets all the nice stories",
+      "description": "Returns all stories from the database",
+      "produces": [
+        "application/json",
+        "text/plain; charset=utf-8"
+      ],
+      "responses": {
+        "200": {
+          "description": "Getting all the stories succeeded.",
+          "schema": {
+            "type": "array",
+            "items": {
+              "$ref": "../definitions/story.json"
+            }
+          }
+        },
+        "404": {
+          "description": "No stories in the database",
+          "schema": {
+            "$ref": "../definitions/error.json"
+          }
+        }
+      }
+    }
+  },
+  "/story/{storycode}": {
+    "get": {
+      "operationId": "getStory",
+      "tags": ["story"],
+      "summary": "Gets a nice story",
+      "description": "Returns a story from the database matching the given storycode",
+      "produces": [
+        "application/json",
+        "text/plain; charset=utf-8"
+      ],
+      "parameters": [
+        {
+          "$ref": "../parameters/story.json#/storycodePathParam"
+        }
+      ],
+      "responses": {
+        "200": {
+          "description": "Getting the story succeeded.",
+          "schema": {
+            "$ref": "../definitions/story.json"
+          }
+        },
+        "404": {
+          "description": "No such story found",
+          "schema": {
+            "$ref": "../definitions/error.json"
+          }
+        }
+      }
+    }
+  }
+}

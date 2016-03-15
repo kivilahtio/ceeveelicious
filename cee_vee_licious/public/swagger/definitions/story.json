@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "properties": {
+    "author": {
+      "$ref": "../definitions.json#/author"
+    },
+    "storycode": {
+      "$ref": "../definitions.json#/storycode"
+    },
+    "text": {
+      "$ref": "../definitions.json#/text"
+    },
+    "title": {
+      "$ref": "../definitions.json#/title"
+    }
+  }
+}

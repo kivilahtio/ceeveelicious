@@ -1,0 +1,8 @@
+{
+  "/story": {
+    "$ref": "paths/story.json#/~1story"
+  },
+  "/story/{storycode}": {
+    "$ref": "paths/story.json#/~1story~1{storycode}"
+  }
+}

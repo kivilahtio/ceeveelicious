@@ -1,0 +1,12 @@
+{
+  "title": "Kivilol CV API",
+  "version": "1",
+  "license": {
+    "name": "GNU Affero GPL",
+    "url": "http://www.gnu.org/licenses/agpl-3.0"
+  },
+  "contact": {
+    "name": "Olli-Antti Kivilahti",
+    "email": "kivilahtio@gmail.com"
+  }
+}

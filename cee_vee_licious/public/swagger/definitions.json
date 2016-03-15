@@ -1,0 +1,18 @@
+{
+  "author": {
+    "type": "string",
+    "description": "Name of the author. A better alternative would be to define this to be interchangeable with https://schema.org/author"
+  },
+  "storycode": {
+    "type": "string",
+    "description": "Unique identifier of a story"
+  },
+  "text": {
+    "type": "string",
+    "description": "A long plain text of something. Purpose is dependant of context, but is not of any formal form"
+  },
+  "title": {
+    "type": "string",
+    "description": "The title, plain text"
+  }
+}

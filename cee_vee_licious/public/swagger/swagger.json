@@ -1,0 +1,10 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "$ref": "info.json"
+  },
+  "basePath": "/api/v1",
+  "paths": {
+    "$ref": "paths.json"
+  }
+}

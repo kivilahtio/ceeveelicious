@@ -1,0 +1,9 @@
+{
+  "storycodePathParam": {
+    "name": "storycode",
+    "in": "path",
+    "type": "string",
+    "description": "Unique story identifier",
+    "required": true
+  }
+}
