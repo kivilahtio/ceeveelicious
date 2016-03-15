@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= asset 'webapp.js'%>
+    <%= asset 'webapp.css'%>
+  </head>
+  <body><%= content %></body>
+</html>

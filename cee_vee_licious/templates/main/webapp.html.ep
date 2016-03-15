@@ -1,0 +1,24 @@
+<% # Copyright (C) 2016  Olli-Antti Kivilahti
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+%>
+
+% layout 'default';
+% title 'CV - kivilahtio@gmail.com';
+This page was generated from the template "templates/example/welcome.html.ep"
+and the layout "templates/layouts/default.html.ep",
+<%= link_to 'click here' => url_for %> to reload the page or
+<%= link_to 'here' => '/index.html' %> to move forward to a static page. To
+learn more, you can also browse through the documentation
+<%= link_to 'here' => '/perldoc' %>.
