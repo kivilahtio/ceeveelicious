@@ -1,3 +1,4 @@
 local/
 *.komodoproject
 cee_vee_licious/public/swagger/swagger.min.json
+cee_vee_licious/public/packed

@@ -1,1 +1,0 @@
-html:before{background:#f00;color:#fff;font-size:14pt;position:fixed;padding:20px;z-index:9999;content:"AssetPack could not generate base_theme_dark-d41d8cd98f00b204e9800998ecf8427e.css (base_theme_dark.less): Failed to run '/usr/local/bin/lessc -' ($?=127, $!=25) /usr/bin/env: node: Tiedostoa tai hakemistoa ei ole";}
