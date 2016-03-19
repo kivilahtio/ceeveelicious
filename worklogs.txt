@@ -1,0 +1,13 @@
+8h - Choosing the back-end systems to use. Comparing build/deployment options, like Docker, Vagrant.
+     Docker seemed the most easiest to deploy.
+     Carton is a great tool for deploying pureperl modules.
+     Mojolicious is pure awesomeness!
+     Swagger2.0 is a great API definition language!
+     Deployed the basic web-server infrastructure and carton/docker build scripts.
+     Implemented the Swagger2 API for "stories".
+
+1h - Decided to use ElasticSearch as the persistence storage over MongoDB. Studying ElasticSearch model definitions.
+
+2h - Realized ES is too big to deploy as a simple CV, so reverting to a pureperl easy-to-deploy DBM::Deep.
+     Writing DB accessor code.
+

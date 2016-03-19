@@ -4,7 +4,7 @@
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -15,9 +15,9 @@
 
 package CeeVeeLicious::Assets;
 
-use Modern::Perl;
+use Modern::Perl '2015';
 
-=head1 SYNOPSIS
+=head1 CeeVeeLicious::Assets
 
 In this file all the assets that the app needs are introduced
 
@@ -37,9 +37,6 @@ sub introduce {
 
     # Add custom response headers for assets
     $app->asset->headers({"Cache-Control" => "max-age=31536000"});
-
-    # Remove old assets
-    $app->asset->purge;
 }
 
 1;

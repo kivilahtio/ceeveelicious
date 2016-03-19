@@ -19,6 +19,9 @@ use Mojo::Base 'Mojolicious';
 use File::Basename;
 
 use CeeVeeLicious::Assets;
+use CeeVeeLicious::Stories;
+use CeeVeeLicious::Config;
+use CeeVeeLicious::Util::Swagger;
 
 sub startup {
   my $self = shift;
@@ -33,12 +36,12 @@ sub setPlugins {
   my $app = $self->app;
   my $swaggerMainFile = $app->home->rel_file("/public/swagger/swagger.json");
 
-  $ENV{SWAGGER2_DEBUG} = 1 unless ($ENV{MOJO_MODE} && $ENV{MOJO_MODE} eq 'production');
+  CeeVeeLicious::Config->setConfig( $self->plugin('Config') );
   $self->plugin('PODRenderer');
   $self->plugin('AssetPack');
   $self->plugin(Swagger2 => {url => $swaggerMainFile});
 
-  $self->minifySwagger($swaggerMainFile);
+  CeeVeeLicious::Util::Swagger->minifySwagger($swaggerMainFile);
   CeeVeeLicious::Assets->introduce($app);
 }
 
@@ -48,19 +51,6 @@ sub defineRoutes {
 
   # Normal route to controller
   $r->get('/')->to('main#webapp');
-}
-
-sub minifySwagger {
-    my ($self, $swaggerMainFile) = @_;
-
-    my $swaggerPath = File::Basename::dirname($swaggerMainFile).'/';
-    my $pathToMinifier = $swaggerPath.'minifySwagger.pl';
-    my $pathToSwaggerJson = $swaggerPath.'swagger.json';
-    my $pathToSwaggerMinJson = $swaggerPath.'swagger.min.json';
-    my $output = `perl $pathToMinifier -s $pathToSwaggerJson -d $pathToSwaggerMinJson`;
-    if ($output) {
-        die $output;
-    }
 }
 
 1;

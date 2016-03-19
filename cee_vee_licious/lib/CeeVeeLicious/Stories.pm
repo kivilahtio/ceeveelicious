@@ -4,7 +4,7 @@
 # it under the terms of the GNU Affero General Public License as
 # published by the Free Software Foundation, either version 3 of the
 # License, or (at your option) any later version.
-
+#
 # This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -13,32 +13,44 @@
 # You should have received a copy of the GNU Affero General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-package CeeVeeLicious::Controller::Story;
-use Mojo::Base 'Mojolicious::Controller';
+package CeeVeeLicious::Stories;
 use Modern::Perl '2015';
 
-use CeeVeeLicious::Stories;
+=NAME
 
-sub list {
-  my ($c, $args, $cb) = @_;
+CeeVeeLicious::Stories
 
-  my $stories = CeeVeeLicious::Stories->list();
-  my @stories = map {$_->pack} @$stories;
-  if (@stories) {
-    return $c->$cb(\@stories, 200);
-  }
-  return $c->$cb({error => "No stories available"}, 404);
-}
+=DESCRIPTION
+
+This is a static manager class for Story-objects
+
+=cut
+
+use MooseX::Params::Validate;
+
+use CeeVeeLicious::DB;
+use CeeVeeLicious::Story;
 
 sub get {
-  my ($c, $args, $cb) = @_;
+    my $class = shift;
+    my ( $storycode ) = validated_list( \@_,
+        storycode   => { isa => 'Str' },
+    );
 
-  my $storycode = $args->{storycode};
-  my $story = CeeVeeLicious::Stories->get(storycode => $storycode);
-  if ($story) {
-    return $c->$cb($story->pack, 200);
-  }
-  return $c->$cb({error => "No story found with storycode '$storycode'"}, 404);
+    my $stories = CeeVeeLicious::DB->connect(schema => 'stories');
+    return CeeVeeLicious::Story->unpack( $stories->{ $storycode } );
+}
+
+sub list {
+    my $class = shift;
+
+    my $stories = CeeVeeLicious::DB->connect(schema => 'stories');
+    my @stories;
+    while (my ($k,$s) = each(%$stories)) {
+        push(@stories, CeeVeeLicious::Story->unpack($s) );
+    }
+
+    return \@stories;
 }
 
 1;

@@ -1,0 +1,32 @@
+{
+  "main": {
+    "storycode": "main",
+    "author": "Olli-Antti Kivilahti",
+    "title": "The dreadful lamentation",
+    "text": "Woe to the wary."
+  },
+  "cv": {
+    "storycode": "cv",
+    "author": "Olli-Antti Kivilahti",
+    "title": "What can I do?",
+    "text": "Koha\nLiferay\nGuard\nCook's aide\nConstruction worker\nCarpenter's aide"
+  },
+  "skills": {
+    "storycode": "story",
+    "author": "Olli-Antti Kivilahti",
+    "title": "What can I do?",
+    "text": "Perl\nSwagger\nMojolicious\nMooselike\nDBIx"
+  },
+  "bio": {
+    "storycode": "bio",
+    "author": "Olli-Antti Kivilahti",
+    "title": "Another dark tale",
+    "text": "I was born. Like most of us."
+  },
+  "tools": {
+      "storycode": "tools",
+      "author": "Olli-Antti Kivilahti",
+      "title": "Another dark tale",
+      "text": "I was born. Like most of us."
+  }
+}
