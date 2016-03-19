@@ -11,3 +11,6 @@
 2h - Realized ES is too big to deploy as a simple CV, so reverting to a pureperl easy-to-deploy DBM::Deep.
      Writing DB accessor code.
 
+4h - Managed to make a semi-intelligent DB system. Created a lean installer to populate default objects.
+     Improved the Docker script to work with new dependencies. Wrote REST API tests. Fixed AssetPack bug.
+     Looking good to start writing the front-end.
