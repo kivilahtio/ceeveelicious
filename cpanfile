@@ -1,5 +1,8 @@
+requires 'File::Slurp', '9999.19';
+requires 'Modern::Perl', '1.20150127';
 requires 'Moose', '2.1605';
 requires 'MooseX::Params::Validate', '0.21';
+requires 'MooseX::Storage', '0.50';
 requires 'Mojolicious', '6.55';
 requires 'Mojolicious::Plugin::AssetPack', '0.69';
 requires 'Swagger2', '0.75';
